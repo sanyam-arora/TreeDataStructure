@@ -2,12 +2,38 @@ package com.arora.tree.binaryTree;
 
 import java.util.ArrayList;
 
+import com.arora.tree.binaryTree.traversal.PreorderTraversal;
 import com.arora.tree.model.BinaryTreeNode;
 
 public class BinaryTree<T> {
 
 	private BinaryTreeNode<T> root = null;
+	private PreorderTraversal<T> preorderTraversal = null;
 	
+	public BinaryTree() {
+		preorderTraversal = new PreorderTraversal<T>();
+	}
+	
+	public ArrayList<BinaryTreeNode<T>> preorderTraversal() {
+		ArrayList<BinaryTreeNode<T>> preorderTraversalList = new ArrayList<BinaryTreeNode<T>>();
+		preorderTraversal.preorderTraversal(getRoot(), preorderTraversalList);
+		return preorderTraversalList;
+	}
+	
+	public String printPreorderTraversal() {
+		return preorderTraversal.printPreorderTraversal(getRoot());
+	}
+	
+	public PreorderTraversal<T> getPreorderTraversal() {
+		return preorderTraversal;
+	}
+
+
+	public void setPreorderTraversal(PreorderTraversal<T> preorderTraversal) {
+		this.preorderTraversal = preorderTraversal;
+	}
+
+
 	public BinaryTreeNode search(T data) {
 		return search(root, data);
 	}
@@ -37,5 +63,10 @@ public class BinaryTree<T> {
 	public void setRoot(BinaryTreeNode<T> root) {
 		this.root = root;
 	}
-
+	
+	public void setRoot(T data) {
+		this.root = new BinaryTreeNode(data);
+	}
+	
+	
 }
