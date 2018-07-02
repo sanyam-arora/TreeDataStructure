@@ -2,14 +2,15 @@ package com.arora.tree.binaryTree;
 
 import java.util.ArrayList;
 
-import com.arora.tree.binaryTree.traversal.InorderTraversal;
-import com.arora.tree.binaryTree.traversal.PostorderTraversal;
-import com.arora.tree.binaryTree.traversal.PreorderTraversal;
-import com.arora.tree.model.BinaryTreeNode;
+import com.arora.tree.common.Tree;
+import com.arora.tree.node.Node;
+import com.arora.tree.traversal.InorderTraversal;
+import com.arora.tree.traversal.PostorderTraversal;
+import com.arora.tree.traversal.PreorderTraversal;
 
-public class BinaryTree<T> {
+public class BinaryTree<T> extends Tree<T>{
 
-	private BinaryTreeNode<T> root = null;
+	private Node<T> root = null;
 	private PreorderTraversal<T> preorderTraversal = null;
 	private InorderTraversal<T> inorderTraversal = null;
 	private PostorderTraversal<T> postorderTraversal = null;
@@ -20,8 +21,8 @@ public class BinaryTree<T> {
 		postorderTraversal = new PostorderTraversal<T>();
 	}
 	
-	public ArrayList<BinaryTreeNode<T>> inorderTraversal() {
-		ArrayList<BinaryTreeNode<T>> inorderTraversalList = new ArrayList<BinaryTreeNode<T>>();
+	public ArrayList<Node<T>> inorderTraversal() {
+		ArrayList<Node<T>> inorderTraversalList = new ArrayList<Node<T>>();
 		inorderTraversal.inorderTraversal(getRoot(), inorderTraversalList);
 		return inorderTraversalList;
 	}
@@ -30,8 +31,8 @@ public class BinaryTree<T> {
 		return inorderTraversal.printInorderTraversal(getRoot());
 	}
 	
-	public ArrayList<BinaryTreeNode<T>> postorderTraversal() {
-		ArrayList<BinaryTreeNode<T>> postorderTraversalList = new ArrayList<BinaryTreeNode<T>>();
+	public ArrayList<Node<T>> postorderTraversal() {
+		ArrayList<Node<T>> postorderTraversalList = new ArrayList<Node<T>>();
 		postorderTraversal.postorderTraversal(getRoot(), postorderTraversalList);
 		return postorderTraversalList;
 	}
@@ -40,8 +41,8 @@ public class BinaryTree<T> {
 		return postorderTraversal.printPostorderTraversal(getRoot());
 	}
 	
-	public ArrayList<BinaryTreeNode<T>> preorderTraversal() {
-		ArrayList<BinaryTreeNode<T>> preorderTraversalList = new ArrayList<BinaryTreeNode<T>>();
+	public ArrayList<Node<T>> preorderTraversal() {
+		ArrayList<Node<T>> preorderTraversalList = new ArrayList<Node<T>>();
 		preorderTraversal.preorderTraversal(getRoot(), preorderTraversalList);
 		return preorderTraversalList;
 	}
@@ -50,13 +51,13 @@ public class BinaryTree<T> {
 		return preorderTraversal.printPreorderTraversal(getRoot());
 	}
 
-	public BinaryTreeNode search(T data) {
+	public Node search(T data) {
 		return search(root, data);
 	}
 
-	public BinaryTreeNode search(BinaryTreeNode<T> node, T data) {
+	public Node search(Node<T> node, T data) {
 
-		BinaryTreeNode searchedNode = null;
+		Node searchedNode = null;
 
 		if (node.getData().equals(data)) {
 			return node;
@@ -72,16 +73,16 @@ public class BinaryTree<T> {
 		return searchedNode;
 	}
 
-	public BinaryTreeNode<T> getRoot() {
+	public Node<T> getRoot() {
 		return root;
 	}
 
-	public void setRoot(BinaryTreeNode<T> root) {
+	public void setRoot(Node<T> root) {
 		this.root = root;
 	}
 	
 	public void setRoot(T data) {
-		this.root = new BinaryTreeNode(data);
+		this.root = new Node(data);
 	}
 	
 	

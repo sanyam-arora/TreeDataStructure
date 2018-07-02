@@ -1,13 +1,13 @@
-package com.arora.tree.binaryTree.traversal;
+package com.arora.tree.traversal;
 
 import java.util.ArrayList;
 
-import com.arora.tree.model.BinaryTreeNode;
+import com.arora.tree.node.Node;
 
 public class PreorderTraversal<T> {
 
-	public void preorderTraversal(BinaryTreeNode<T> node,
-			ArrayList<BinaryTreeNode<T>> preorderTraversalList) {
+	public void preorderTraversal(Node<T> node,
+			ArrayList<Node<T>> preorderTraversalList) {
 		
 		if(null == node) {
 			return;
@@ -20,12 +20,12 @@ public class PreorderTraversal<T> {
 		
 	}
 	
-	public String printPreorderTraversal(BinaryTreeNode<T> node) {
-		ArrayList<BinaryTreeNode<T>> preorderTraversalList = new ArrayList<BinaryTreeNode<T>>();
+	public String printPreorderTraversal(Node<T> node) {
+		ArrayList<Node<T>> preorderTraversalList = new ArrayList<Node<T>>();
 		preorderTraversal(node, preorderTraversalList);
 		StringBuffer printList = new StringBuffer("");
 		
-		for(BinaryTreeNode<T> listNode: preorderTraversalList) {
+		for(Node<T> listNode: preorderTraversalList) {
 			printList.append(listNode.getData() + " ");
 		}
 		

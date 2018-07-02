@@ -1,12 +1,12 @@
-package com.arora.tree.binaryTree.traversal;
+package com.arora.tree.traversal;
 
 import java.util.ArrayList;
 
-import com.arora.tree.model.BinaryTreeNode;
+import com.arora.tree.node.Node;
 
 public class PostorderTraversal<T> {
 
-	public void postorderTraversal(BinaryTreeNode<T> node, ArrayList<BinaryTreeNode<T>> postorderTraversalList) {
+	public void postorderTraversal(Node<T> node, ArrayList<Node<T>> postorderTraversalList) {
 
 		if (null == node) {
 			return;
@@ -20,12 +20,12 @@ public class PostorderTraversal<T> {
 
 	}
 
-	public String printPostorderTraversal(BinaryTreeNode<T> node) {
-		ArrayList<BinaryTreeNode<T>> postorderTraversalList = new ArrayList<BinaryTreeNode<T>>();
+	public String printPostorderTraversal(Node<T> node) {
+		ArrayList<Node<T>> postorderTraversalList = new ArrayList<Node<T>>();
 		postorderTraversal(node, postorderTraversalList);
 		StringBuffer printList = new StringBuffer("");
 
-		for (BinaryTreeNode<T> listNode : postorderTraversalList) {
+		for (Node<T> listNode : postorderTraversalList) {
 			printList.append(listNode.getData() + " ");
 		}
 
