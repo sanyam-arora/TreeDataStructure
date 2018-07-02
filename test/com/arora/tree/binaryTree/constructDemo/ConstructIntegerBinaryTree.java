@@ -16,6 +16,8 @@ public class ConstructIntegerBinaryTree<T> {
 		binaryIntegerTree.getRoot().getRightChild().setRightChild(new Node<Integer>(5));
 		binaryIntegerTree.getRoot().getLeftChild().setRightChild(new Node<Integer>(6));
 		binaryIntegerTree.getRoot().getRightChild().setLeftChild(new Node<Integer>(7));
+		binaryIntegerTree.getRoot().getRightChild().getLeftChild().setLeftChild(new Node<Integer>(8));
+
 		
 		return binaryIntegerTree;
 	}
