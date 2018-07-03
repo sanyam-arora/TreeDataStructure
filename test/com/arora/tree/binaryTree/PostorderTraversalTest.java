@@ -1,6 +1,6 @@
 package com.arora.tree.binaryTree;
 
-import com.arora.tree.binaryTree.constructDemo.ConstructIntegerBinaryTree;
+import com.arora.tree.construct.ConstructIntegerBinaryTree;
 
 public class PostorderTraversalTest {
 

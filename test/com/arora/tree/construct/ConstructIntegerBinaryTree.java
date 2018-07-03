@@ -1,4 +1,4 @@
-package com.arora.tree.binaryTree.constructDemo;
+package com.arora.tree.construct;
 
 import com.arora.tree.binaryTree.BinaryTree;
 import com.arora.tree.node.Node;

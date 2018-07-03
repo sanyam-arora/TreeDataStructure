@@ -1,6 +1,6 @@
 package com.arora.tree.node;
 
-public class Node<T> {
+public class Node<T extends Comparable<? super T>> {
 
 	private Node rightChild;
 
